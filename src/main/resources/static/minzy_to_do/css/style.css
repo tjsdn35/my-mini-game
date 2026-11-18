@@ -1,0 +1,26 @@
+body {
+	/* 전체 홈페이지문서 보이는 영역 전채 설정 */
+	background-color: #99ffee; /* 3의 배수 안전한색 */
+	font-family: sans-serif;
+}
+
+<!--
+h1 {
+	margin: 10px 0; /* 주변 위젯 여백 */
+	font-size: 50px; /* 글자크기 직접제어 */
+	color: blue; /* 글자색 파랑 */
+}
+
+-->
+h1 {
+	color: #267557;
+}
+
+/* 클래스 card 설정 */
+.card {
+	padding: 24px;
+	background: white; /* 원래는 background-color*/
+	border: 1px solid #e5e5e5;
+	border-radius: 18px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); /* box-shadow: 그림자를 만듭니다. */
+}

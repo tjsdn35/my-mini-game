@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* 화면 전체(body) 영역의 기본 스타일 지정 */
+body {
+	font-family: Arial, sans-serif; /* 기본 글꼴 설정 */
+	background-color: #eef7ff;  /* 전체 배경색을 설정 */
+	color: #20304a;
+	padding: 40px; /* 화면 맨 위에서 ex) 50px만큼 여백 주기 */
+}
+
+/* 제목(h1) 태그의 스타일 지정 */
+h1 {
+	color: #18324b;
+	font-size: 72px;
+}
+
+#score {
+	background-color: #a9a9a9;
+	font-size: 50px;
+}
+
+button:hover {
+	background-color: #245f40;
+	border: 1px solid #ff0000;
+}
+
+.game-card {
+	background-color: #ffffff;
+	padding: 24px;
+	border: 1px solid #dce5ec;
+	text-align: center;
+}
+
+.game-card button {
+	background-color: #00ff00;
+	color: yellow;
+	padding: 12px 20px;
+	border: none;
+}
+
+.success {
+    color: #249b80;
+    font-weight: bold;
+    background-color: #eef7ff;
+    padding: 8px;
+}

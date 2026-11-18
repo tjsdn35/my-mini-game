@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>토이 1호:첫 웹페이지</title>
+<link rel="stylesheet" href="./css/style.css">
+<!-- minzy_to_do/js/app.js 외부파일 js -->
+
+</head>
+<body>
+	<section>
+		<h1>마리나의 첫 웹페이지</h1>
+		<p>웹 개발을 시작했습니다.</p>
+		<!-- <b>:찐한 단어를 -->
+		<p>
+			오늘은 <b>좋은 날</b>입니다.
+		</p>
+	</section>
+	<section>
+		<h2>오늘 할 일</h2>
+		<!-- 리스트 만들기 -->
+		<ul>
+			<!-- 리스트 틀 -->
+			<li>책읽기</li>
+			<!-- 현재 리스트의 항목 한개 -->
+			<li>산책하기</li>
+			<!-- 현재 리스트의 두번째 항목 -->
+			<li>수수수수수</li>
+			<li>소소소소소</li>
+			<li>저저저저저</li>
+		</ul>
+		<!-- 03. 입력창과 버튼 만들기 -->
+		<label for="nickname">별명</label> 
+		<input 
+			id="nickname" 
+			type="text" 
+			placeholder="별명 적기">
+		<button type="button" id="helloButton">인사하기</button>
+	</section>
+	
+	<!-- <section>대신에 <div>...</div>사용 -->
+	<script type="text/javascript">
+		// 여기서부터는 태그나라가 아니라
+		// 자바스크랩트 나라입니다
+		// 절대로 이안에서는 <...> 쓰시면 안됩니다
+		// script.../script 바깥에서만 쓰세요.
+		
+		// 함수 정의
+		// function 함수면(입력 매개변수) {
+		//	입력매개변수를 사용한 처리문...
+		//	}
+ /*
+		function sayHello(msg) {
+			alert(msg);
+		}
+		sayHello("안녕하세요!");
+*/	
+		</script>
+ 
+	<div class="card">
+		<h2>오늘의 목표</h2>
+		<p>JavaScript 기초 배우기</p>
+	</div>
+	
+	<div class="card">
+		<h2>오늘의 할일</h2>
+		<p>배고파</p>
+	</div>
+	<!-- 12. 객체와 배열 -->
+ 	<div class="card">
+ 	<h3>✨✨할일✨✨</h3>
+ 	<p>오늘도 열심히 공부했어요.</p>
+
+	<div>
+		<input type="text" 
+		id="taskInput" 
+		placeholder="할 일을 입력하세요" />
+
+		<button id="addButton">추가하기</button>
+	</div>
+
+	<!-- 입력상자에서 입력한 할일 추가 -->
+	<ul id="taskList">
+	</ul>
+
+		<!--  
+		<button id="button1">첫번째 배열 요소값 출력</button>
+		<button id="button2">두번째 배열 요소값 출력</button>
+		<button id="button3">세번째 배열 요소값 출력</button>
+		<button id="button4">네번째 배열 요소값 출력</button>
+		<button id="button5">다섯번째 배열 요소값 출력</button>
+	</div>
+-->	
+
+	<script src="js/app.js"></script>
+	
+	<!-- 
+		1.css 화면을 꾸미는 아이입니다. 제일 먼저 불러옴
+		2.html 태그는 구조를 만든는 아이입니다
+			css파일 다음에 와야 합니다
+		3js는 html 구조가 만들어져야 작동합니다
+			따라서 '</body>' 태그 바로 위에 와야 좋음
+	 -->
+</body>
+</html>
