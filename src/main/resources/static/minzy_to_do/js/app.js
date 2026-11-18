@@ -112,7 +112,8 @@ addButton.addEventListener(
         taskList.append(item);
 	// 6.5 추가된 할일을 완료표시하기(취소선으로 완료)
 	// 아이템 리스트를 마우스로 클릭하는 경우
-        item.addEventListener("click", function() {
+        item.addEventListener(
+			"click", function() {
             item.style.textDecoration = "line-through";
         });
 		
@@ -123,4 +124,48 @@ addButton.addEventListener(
     }
 );
 
+// loadStroge을 이용한 행운뽑기
+// 1. 포춘종류 배열만듭니다.
+const fortunes = [
+	"오늘은  행운이 가득해",
+	"멋진 일이 셍길거야",
+	"오늘은 맛있는 걸 먹자",
+	"새로운 도전을 시작해 봐",
+	"너는 충분히 잘하고 있어"
+];
+// 2. 선택된 포춘을 저장하는 포춘변수를 초기화
+let currentFortune = "";
 
+// 3. 실제 포춘을 뽑는 함수 정의 brawFortuen()wjddml
+function brawFortuen() {
+	// 1. 포춘배열에서 난수로 인덱스 번호를 가져오면된다
+	// 2. 난수 만들기 -> 임의의 정수 생성
+	// math.floor(숫자의 범위) :
+	//		수학라이브러리.주어진 범위에서 가장 작은 정수를 뽑는 함수
+	// 숫자의 범위는 난수를 발생시킨 값 * 배열의 갯수
+	// 0 <= 난수 <= 배열의 갯수 사이의 실수
+	// floor(3.5) : 3을 리턴
+	// Math.random() : 0.0 <= 난수 < 1.0보다 작은 실수
+	const index = 	Math.floor(
+		Math.random() * fortunes.length
+	); // 배열.length : 배열의 크기
+	
+	// 현재 랜덤 행운 뽑기
+	currentfortunes = fortunes[index];
+	
+	// 현재 운세의 내용을 result 태그에 출력
+	document.querySelector("#result").textContent =
+	currentFortune;
+}
+// 4. 포춘을 저장하는 함수 정의 saveFortuen()wjddml
+function aveFortuen() {
+	
+}
+// 5. 저장된 포춘을 불러옵니다 함수 정의 loadFortuen()wjddml
+function loadFortuen() {
+	
+}
+// 6. 저장된 포춘정보를 삭제하기 함수 정의 deleteFortuen()wjddml
+function deleteFortuen() {
+	
+}

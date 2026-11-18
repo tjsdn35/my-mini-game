@@ -16,6 +16,11 @@ h1 {
 	color: #267557;
 }
 
+li:hover {
+	background: #dbeafe;
+}
+
+
 /* 클래스 card 설정 */
 .card {
 	padding: 24px;
@@ -24,3 +29,4 @@ h1 {
 	border-radius: 18px;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); /* box-shadow: 그림자를 만듭니다. */
 }
+
