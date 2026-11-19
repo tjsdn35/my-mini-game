@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+/* 모든 HTML 요소의 크기 계산을 편하게 맞춤 (교재 21p) */
+* {
+  box-sizing: border-box;
+}
+
+/* 모든 페이지에 공통 적용되는 배경색과 글꼴 (교재 20p) */
+body {
+  color: #18324b;
+  background-color: #f7faf6;
+  font-family: "Malgun Gothic", sans-serif;
+  text-align: center;
+  padding: 30px;
+  margin: 0;
+}
+
+/* 게임 화면을 감싸는 공통 흰색 카드 틀 (교재 22p, 42p) */
+.card, .game-shell {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 24px;
+  border: 1px solid #dce5ec;
+  border-radius: 18px;
+}
+
+/* 공통 버튼 디자인 (교재 22p) */
+button {
+  background-color: #327a55;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #245f40;
+}
+
+/* 공통 입력창 디자인 (숫자 맞히기 등) */
+input {
+  padding: 10px 14px;
+  border: 2px solid #dce5ec;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+/* 안내 및 결과 메시지 여백 */
+.message {
+  margin: 16px 0;
+  font-weight: bold;
+}
+
+/* 10점 달성 축하 메시지 강조 스타일 */
+.success {
+  color: #249b80;
+  font-size: 20px;
+}

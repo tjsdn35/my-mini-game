@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>보물찾기 게임</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!-- 전체 화면을 가운데 정렬하기 위한 묶음 추가 -->
+    <div class="container">
+        <div class="game-card">
+            <h1>보물찾기 게임2</h1>
+            <p>숨겨진 보물을 찾아라</p>
+        </div>
+
+        <div class="game-card">
+            <h2>클릭 점수 게임</h2>
+            <p>현재 점수: <span id="score">0</span> / 목표: 10점</p>
+            <p id="gameMessage">버튼을 눌러 목표 점수에 도전하세요!</p>
+            <button id="scoreButton">점수 올리기 (+1)</button>
+            <button id="resetButton">초기화</button>
+        </div>
+
+		<div class="game-card">
+			<h2>숫자 맞추기</h2>
+			<p>
+				<span class="highlight">1부터 50까지의 숫자를 맞추세요</span>
+			</p>
+			<!-- 도전 횟수 표시 추가 -->
+			<p>
+				도전 횟수: <span id="attempts">0</span> / 최대 7회
+			</p>
+			<p>
+				입력한 숫자 기록: <span id="guessHistory">없음</span>
+			</p>
+
+			<label for="guessInput">예상 숫자:</label> 
+			<input id="guessInput"
+				type="number" min="1" max="50" placeholder="1~50 입력">
+			<button id="guessButton">확인</button>
+			<button id="newGameButton">새 게임</button>
+
+			<p id="guessResult">숫자를 입력하고 확인 버튼을 눌러보세요!</p>
+		</div>
+
+		<div class="game-card">
+            <p>현재 점수는 <span class="highlight">20점</span>입니다.</p>
+        </div>
+
+        <p>분발해주세요</p>
+    </div>
+
+    <script src="js/app2.js" defer></script>
+</body>
+
+</html>

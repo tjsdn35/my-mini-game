@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자 맞히기 게임</title>
+  <link rel="stylesheet" href="../css/mini.css">
+  <script src="../js/guess.js" defer></script>
+</head>
+<body>
+  <section class="card">
+    <h1>숫자 맞히기 게임</h1>
+    <p>1부터 100 사이의 비밀 숫자를 맞혀 보세요!</p>
+    
+    <div style="margin: 20px 0;">
+      <input id="numberInput" type="number" min="1" max="100" placeholder="숫자 입력 (1~100)">
+      <button id="checkButton">확인</button>
+    </div>
+
+    <p id="message" class="message">숫자를 입력하고 확인을 눌러 주세요.</p>
+    <button id="restartButton">새 게임 시작</button>
+
+    <div style="margin-top: 20px;">
+      <a href="../meme.html">← 메인 화면으로 돌아가기</a>
+    </div>
+  </section>
+</body>
+</html>

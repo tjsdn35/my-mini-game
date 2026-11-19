@@ -18,7 +18,7 @@
 		</p>
 	</section>
 	<section>
-		<h2>오늘 할 일</h2>
+		<h1>오늘 할 일</h1>
 		<!-- 리스트 만들기 -->
 		<ul>
 			<!-- 리스트 틀 -->
@@ -67,10 +67,11 @@
 		<h2>오늘의 할일</h2>
 		<p>배고파</p>
 	</div>
-	<!-- 12. 객체와 배열 -->
- 	<div class="card">
- 	<h3>✨✨할일✨✨</h3>
- 	<p>오늘도 열심히 공부했어요.</p>
+	
+		<!-- 12. 객체와 배열 -->
+	<div class="card">
+ 		<h2>✨✨할일✨✨</h2>
+ 		<p>오늘도 열심히 공부했어요.</p>
 
 	<div>
 		<input type="text" 
@@ -81,8 +82,8 @@
 	</div>
 
 	<!-- 입력상자에서 입력한 할일 추가 -->
-	<ul id="taskList">
-	</ul>
+		<ul id="taskList">
+		</ul>
 
 		<!--  
 		<button id="button1">첫번째 배열 요소값 출력</button>
@@ -91,16 +92,20 @@
 		<button id="button4">네번째 배열 요소값 출력</button>
 		<button id="button5">다섯번째 배열 요소값 출력</button>
 	</div>
--->	
-  <div id="result">행운을 뽑아봅시다.</div>
-  
-  <button onclick="drawFortune">행운 뽑기</button>
-  <button onclick="saveFortuen">행운 저장</button>
-  <button onclick="loadFortuen">저장된 행운 불러오기</button>
-  <button onclick="deleteFortuen">저장 삭제</button>
+		-->
+	</div>
+			
+	<div class="card">
+		<h3>🎁 나의 행운 상자 🎁</h3>		
+  	<div id="result">행운을 뽑아봅시다.</div>
+
+		<button onclick="drawFortune()">행운 뽑기</button>
+		<button onclick="saveFortune()">행운 저장</button>
+		<button onclick="loadFortune()">저장된 행운 불러오기</button>
+		<button onclick="deleteFortune()">저장 삭제</button>
+
 	
-	<script src="js/app.js"></script>
-	
+		<script src="js/app.js"></script>
 	<!-- 
 		1.css 화면을 꾸미는 아이입니다. 제일 먼저 불러옴
 		2.html 태그는 구조를 만든는 아이입니다

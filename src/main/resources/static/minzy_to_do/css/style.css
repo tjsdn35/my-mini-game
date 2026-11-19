@@ -4,14 +4,14 @@ body {
 	font-family: sans-serif;
 }
 
-<!--
+/*
 h1 {
-	margin: 10px 0; /* 주변 위젯 여백 */
-	font-size: 50px; /* 글자크기 직접제어 */
-	color: blue; /* 글자색 파랑 */
+    margin: 10px 0;
+    font-size: 50px;
+    color: blue;
 }
+*/
 
--->
 h1 {
 	color: #267557;
 }
@@ -30,3 +30,94 @@ li:hover {
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); /* box-shadow: 그림자를 만듭니다. */
 }
 
+#result   {
+	font-size: 24px;
+	padding: 16px;
+	background: white;
+	border-radius: 15px;
+	margin: 15px; 
+}
+
+/* index2.html css */
+
+.game-card {
+    padding: 24px;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px; /* 카드끼리 붙지 않게 여백을 주면 더 깔끔합니다 */
+}
+
+
+.highlight {
+	background-color: green;
+	color: pink;
+	}
+	
+.game-card button {
+    background-color: #267557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.game-card button:hover {
+    background-color: #1b543e;
+}
+
+.game-card button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #267557;
+}
+
+#gameMessage {
+    font-weight: bold;
+    color: #18324b;
+}
+	
+/* 숫자 입력창 디자인 */
+.game-card input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    width: 120px;
+    margin: 0 6px;
+}
+
+#guessResult {
+    font-weight: bold;
+    color: #18324b;
+}
+
+/* 전체 화면 레이아웃 가운데 정렬 (교재 CSS-06 활용) */
+.container {
+    width: 100%;
+    max-width: 640px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+/* 도전 횟수 숫자 강조 */
+#attempts {
+    font-weight: bold;
+    color: #267557;
+    font-size: 18px;
+}
+
+/* 입력한 숫자 기록 스타일 */
+#guessHistory {
+    font-weight: bold;
+    color: #d05a32;
+}
