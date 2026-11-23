@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 라이프 대시보드</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">MY DAILY SPACE</p>
+                <h1>나의 라이프 대시보드</h1>
+                <p class="subtitle">오늘 해야 할 일을 차근차근 완성해 봐요.</p>
+            </div>
+            <div class="today-box">
+                <span class="today-label">TODAY</span>
+                <strong id="todayDate">날짜를 불러오는 중...</strong>
+            </div>
+        </header>
+
+        <main>
+            <section class="focus-panel">
+                <div>
+                    <p class="eyebrow">TODAY'S FOCUS</p>
+                    <h2>작은 한 걸음이 큰 변화를 만들어요.</h2>
+                    <p>오늘의 할 일을 등록하고 하나씩 완료해 보세요.</p>
+                </div>
+                <div class="focus-mark" aria-hidden="true">✓</div>
+            </section>
+
+            <section class="summary-grid" aria-label="오늘의 현황">
+                <article class="summary-card">
+                    <span class="summary-label">전체 할 일</span>
+                    <strong id="totalCount">0</strong>
+                    <span class="summary-unit">개</span>
+                </article>
+                <article class="summary-card">
+                    <span class="summary-label">완료한 일</span>
+                    <strong id="doneCount">0</strong>
+                    <span class="summary-unit">개</span>
+                </article>
+                <article class="summary-card progress-card">
+                    <div class="progress-heading">
+                        <span class="summary-label">오늘의 완료율</span>
+                        <strong id="progressText">0%</strong>
+                    </div>
+                    <div class="progress-track" role="progressbar" aria-label="할 일 완료율"
+                         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                </article>
+            </section>
+
+            <div class="content-grid">
+                <section class="panel task-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">MY TASKS</p>
+                            <h2>오늘의 할 일</h2>
+                        </div>
+                        <span class="small-chip">하나씩 완료하기</span>
+                    </div>
+
+                    <form id="taskForm" class="task-form">
+                        <label class="sr-only" for="taskInput">새로운 할 일</label>
+                        <input id="taskInput" type="text" maxlength="100"
+                               placeholder="예: HTML 20분 공부하기" autocomplete="off">
+                        <button type="submit" class="primary-button">+ 추가하기</button>
+                    </form>
+
+                    <div class="filter-row" aria-label="할 일 필터">
+                        <button type="button" class="filter-button active" data-filter="all">전체</button>
+                        <button type="button" class="filter-button" data-filter="active">진행 중</button>
+                        <button type="button" class="filter-button" data-filter="done">완료</button>
+                    </div>
+
+                    <ul id="taskList" class="task-list" aria-live="polite"></ul>
+                    <p id="emptyMessage" class="empty-message">아직 등록한 할 일이 없어요. 첫 번째 할 일을 추가해 보세요!</p>
+                </section>
+
+                <section class="panel memo-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">MY MEMO</p>
+                            <h2>오늘의 메모</h2>
+                        </div>
+                        <span class="memo-icon" aria-hidden="true">✎</span>
+                    </div>
+                    <label class="sr-only" for="memoInput">오늘의 메모</label>
+                    <textarea id="memoInput" rows="10"
+                              placeholder="오늘 기억하고 싶은 일이나 생각을 자유롭게 적어 보세요."></textarea>
+                    <p id="memoStatus" class="memo-status">이 브라우저에 자동 저장돼요.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>나의 라이프 대시보드 · 오늘도 잘하고 있어요!</p>
+        </footer>
+    </div>
+</body>
+</html>
