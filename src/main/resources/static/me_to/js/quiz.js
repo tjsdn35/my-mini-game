@@ -139,30 +139,36 @@ function showHint() {
 
 // 6. 정답 확인 및 색상 강조하기
 function checkAnswer(selectedIndex) {
-  if (answered) return;
-  answered = true;
+    if (answered) return;
+   		 answered = true;
 
-  const currentQuiz = questions[currentIndex];
-  const allButtons = optionsElement.querySelectorAll("button");
+    const currentQuiz = questions[currentIndex];
+    const allButtons = optionsElement.querySelectorAll("button");
 
-  for (let i = 0; i < allButtons.length; i++) {
-    allButtons[i].disabled = true;
-  }
+    for (let i = 0;i < allButtons.length;i++) {
+        allButtons[i].disabled = true;
+    }
 
-  if (selectedIndex === currentQuiz.answer) {
-    score = score + 10;
-    scoreElement.textContent = score;
-    feedbackElement.textContent = "정답입니다! (+10점) " + currentQuiz.explanation;
-    feedbackElement.classList.add("success"); // 정답 문구 초록색 강조
-    allButtons[selectedIndex].classList.add("correct"); // 선택한 버튼 초록색 강조
-  } else {
-    feedbackElement.textContent = "오답입니다! " + currentQuiz.explanation;
-    feedbackElement.classList.add("error"); // 오답 문구 빨간색 강조
-    allButtons[selectedIndex].classList.add("wrong"); // 틀린 버튼 빨간색 강조
-    allButtons[currentQuiz.answer].classList.add("correct"); // 실제 정답 버튼 초록색 표시
-  }
+    if (selectedIndex === currentQuiz.answer) {
+        score = score + 10;
+        scoreElement.textContent = score;
+        feedbackElement.textContent = "정답입니다! (+10점) " + currentQuiz.explanation;
+        feedbackElement.classList.add("success"); // 정답 문구 초록색 강조
+        allButtons[selectedIndex].classList.add("correct"); // 선택한 버튼 초록색 강조
+    } else {
+        feedbackElement.textContent = "오답입니다! " + currentQuiz.explanation;
+        feedbackElement.classList.add("error"); // 오답 문구 빨간색 강조
+        allButtons[selectedIndex].classList.add("wrong"); // 틀린 버튼 빨간색 강조
+        allButtons[currentQuiz.answer].classList.add("correct"); // 실제 정답 버튼 초록색 표시
+    }
 
-  nextButton.hidden = false;
+    if (currentIndex === questions.length - 1) {
+        nextButton.textContent = "결과 보기";
+    } else {
+        nextButton.textContent = "다음 문제";
+    }
+   
+	 nextButton.hidden = false;
 }
 
 // 7. 다음 문제 또는 결과 화면으로 이동
@@ -184,7 +190,7 @@ function showResult() {
 
   if (score === maxScore) {
     resultMessageElement.textContent = "완벽합니다! 모든 문제를 맞혔어요!";
-  } else if (score >= 30) {
+  } else if (score >= maxScore * 0.6) {
     resultMessageElement.textContent = "잘했어요! 조금만 더 하면 만점입니다.";
   } else {
     resultMessageElement.textContent = "다시 도전해서 더 높은 점수에 도전해 보세요!";

@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>숫자 맞히기 게임</title>
-  <link rel="stylesheet" href="../css/mini.css">
-  <script src="../js/guess.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 맞히기 게임 (1~100)</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/guess.js" defer></script>
 </head>
 <body>
-  <section class="card">
-    <h1>숫자 맞히기 게임</h1>
-    <p>1부터 100 사이의 비밀 숫자를 맞혀 보세요!</p>
-    
-    <div style="margin: 20px 0;">
-      <input id="numberInput" type="number" min="1" max="100" placeholder="숫자 입력 (1~100)">
-      <button id="checkButton">확인</button>
-    </div>
+    <main class="game-shell">
+        <section class="game-card">
+            <h1>숫자 맞히기 게임</h1>
+            <!-- 50 -> 100으로 변경 -->
+            <p>1부터 100 사이의 비밀 숫자를 맞혀 보세요!</p>
+            
+            <div style="margin: 20px 0;">
+                <!-- max="100", placeholder="1~100 입력"으로 변경 -->
+                <input id="numberInput" type="number" min="1" max="100" placeholder="1~100 입력" style="padding: 10px; font-size: 16px; width: 140px; text-align: center;">
+            </div>
 
-    <p id="message" class="message">숫자를 입력하고 확인을 눌러 주세요.</p>
-    <button id="restartButton">새 게임 시작</button>
-
-    <div style="margin-top: 20px;">
-      <a href="../meme.html">← 메인 화면으로 돌아가기</a>
-    </div>
-  </section>
+            <div class="button-row">
+                <button id="checkButton">확인</button>
+                <button id="restartButton">새 게임</button>
+            </div>
+            
+            <p id="message" style="margin-top: 20px; font-weight: bold;">숫자를 입력하고 확인을 누르세요.</p>
+            <br>
+            <a href="../meme.html">← 메인으로 돌아가기</a>
+        </section>
+    </main>
 </body>
 </html>

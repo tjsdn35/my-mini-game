@@ -107,16 +107,25 @@ body {
   border-color: #327a55;
 }
 
+/* 비활성화된 보기 버튼(disabled)의 마우스 커서와 호버 효과 */
+.option-button:disabled {
+    cursor: default;
+}
+
+/* style.css 110번 줄 @media 블록 안에 추가 추천 */
 @media (max-width: 600px) {
-  .score-line {
-    flex-direction: column;
-  }
+    body {
+        padding: 16px;
+    }
+    .score-line {
+        flex-direction: column;
+    }
 }
 
 /* === 퀴즈 게임 정답/오답 강조 및 힌트 스타일 === */
 .error {
   color: #d94848;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .option-button.correct {
