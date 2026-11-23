@@ -1,0 +1,222 @@
+:root {
+  --bg-color: #f4f8f6;
+  --card-bg: #ffffff;
+  --primary: #267557;
+  --primary-hover: #1d5b43;
+  --text-main: #243044;
+  --text-sub: #64748b;
+  --border-color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: "Malgun Gothic", sans-serif;
+}
+
+.dashboard-shell {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 헤더 */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dash-header h1 {
+  margin: 0 0 6px 0;
+  color: var(--primary);
+  font-size: 26px;
+}
+
+.date-text {
+  margin: 0;
+  color: var(--text-sub);
+  font-size: 15px;
+}
+
+.home-link {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  padding: 8px 14px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+/* 그리드 레이아웃 */
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--card-bg);
+  padding: 22px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: var(--text-main);
+}
+
+.memo-panel {
+  grid-column: 1 / -1; /* 메모장은 아래쪽 전체 너비 사용 */
+}
+
+/* 입력창 & 버튼 */
+input[type="text"], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+input[type="text"]:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.todo-form {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-form button {
+  padding: 0 18px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.todo-form button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* 진행률 막대 */
+.progress-box {
+  margin-top: 20px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background-color: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+/* 할 일 목록 */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background-color: #f8fafc;
+  border-radius: 10px;
+}
+
+.task-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.task-label.done span {
+  text-decoration: line-through;
+  color: var(--text-sub);
+}
+
+.del-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* 메모 상단 & 푸터 */
+.memo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.memo-header h2 {
+  margin: 0;
+}
+
+.save-badge {
+  font-size: 12px;
+  color: var(--primary);
+  background: #e6f4ee;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.dash-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+/* 모바일 화면 대응 */
+@media (max-width: 700px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

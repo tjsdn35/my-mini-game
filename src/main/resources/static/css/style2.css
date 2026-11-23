@@ -27,6 +27,15 @@ body {
 		radial-gradient(circle at 90% 0%, #e7f4eb 0, transparent 28rem),
 			var(--background);
 }
+/* 전체 헤더 영역 */
+.topbar {
+	display: flex; /* 둘러싸인 안의 영역들을 유연하게 배치(주로 가로 또는 세로 영역) */
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 48px 0 30px;
+}
+
 /* 완쪽 상단 좌측 헤더 */
 .page {
 	width: min(1120px, calc(100% - 40px));
@@ -66,11 +75,45 @@ body {
 	letter-spacing: 1.5px; /* 글자간 여백을 설정 */
 }
 
-.todayDate {
+#todayDate {
 	font-size: 16px;
 	font-weight: bolder;
 	
 }
 
+/* main의 첫번째 패널 */
+.focus-panel {
+	display: flex;
+	justify-content: space-between; /* 양쪽 끝 정렬 (사이 여백 균등 배분) */
+	align-items: center;
+	gap: 20px;
+	padding: 28px 32px;
+	border-radius: 22px;
+	color: white;
+	background: linear-gradient(115deg, #287a5b, #459b75);
+	box-shadow: 0 14px 35px rgba(40, 122, 91, .15);
+}
 
+/* .focus-panel 안의 .eyebrow selector에 적용 */
+.focus-panel .eyebrow {
+	color: #c8ead8;
+}
 
+/* .focus-panel의 h2태그 selector에 적용 */
+.focus-panel h2 {
+	margin-bottom: 8px;
+	font-size: clamp(20px, 3vw, 26px);
+	letter-spacing: -.8px;
+}
+
+/* 꼬리영역 꾸미기 */
+footer {
+	/* main 영역과 여백주기 */
+	padding: 28px 0 35px;
+	/* 컬러색상을 #9aa69f */
+	color: #9aa69f;
+	/* 텍스트 가운데 정렬 */
+	text-align : center;
+	/* font-size: 12px; */
+	font-size: 12px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 라이프 대시보드</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-shell">
+    <!-- 1. 상단 제목과 날짜 -->
+    <header class="dash-header">
+      <div>
+        <h1>🌿 나의 라이프 대시보드</h1>
+        <p id="todayDate" class="date-text">날짜를 불러오는 중...</p>
+      </div>
+      <a href="index.html" class="home-link">← 메인으로</a>
+    </header>
+
+    <main class="dash-grid">
+      <!-- 2. 오늘의 집중 영역 & 할 일 완료율 -->
+      <section class="panel focus-panel">
+        <h2>🎯 오늘의 집중 목표</h2>
+        <input id="focusInput" type="text" placeholder="오늘 가장 집중할 한 가지를 적어보세요">
+        
+        <div class="progress-box">
+          <div class="progress-info">
+            <span>할 일 완료율</span>
+            <strong id="progressPercent">0%</strong>
+          </div>
+          <div class="progress-track">
+            <div id="progressBar" class="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 & 4. 할 일 입력 폼 및 할 일 목록 -->
+      <section class="panel todo-panel">
+        <h2>✅ 오늘의 할 일</h2>
+        <form id="todoForm" class="todo-form">
+          <input id="taskInput" type="text" placeholder="새로운 할 일을 입력하세요">
+          <button type="submit">추가</button>
+        </form>
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+
+      <!-- 5. 메모 자동 저장 영역 -->
+      <section class="panel memo-panel">
+        <div class="memo-header">
+          <h2>📝 빠른 메모</h2>
+          <span id="memoStatus" class="save-badge">자동 저장됨</span>
+        </div>
+        <textarea id="memoInput" rows="6" placeholder="자유롭게 메모를 남겨보세요. 입력하는 즉시 자동 저장됩니다."></textarea>
+      </section>
+    </main>
+
+    <!-- 6. 안내 문구와 푸터 -->
+    <footer class="dash-footer">
+      <p>모든 데이터는 현재 브라우저(localStorage)에 안전하게 저장됩니다. 비밀번호 등 민감한 정보는 입력하지 마세요.</p>
+    </footer>
+  </div>
+
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>
