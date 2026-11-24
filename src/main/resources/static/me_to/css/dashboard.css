@@ -49,11 +49,13 @@ body {
   text-decoration: none;
   color: var(--primary);
   font-weight: bold;
-  padding: 8px 14px;
+  font-size: 18px;          /* 글씨 크기 추가 (메인 이동 버튼과 통일) */
+  padding: 12px 22px;       /* 글씨 크기에 맞춘 조화로운 여백 */
   background: white;
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 20px;
 }
+
 
 /* 그리드 레이아웃 */
 .dash-grid {

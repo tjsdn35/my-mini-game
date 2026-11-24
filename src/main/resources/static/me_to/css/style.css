@@ -162,3 +162,29 @@ li span {
 .sub-btn.danger:hover {
   background-color: #ef4444;
 }
+
+/* === 우측 상단 라이프 대시보드 이동 버튼 (흰색 카드 밖, 겹침 방지) === */
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 900px;
+  margin: 0 auto 20px auto; /* 버튼 아래쪽 여백(20px)을 확보해 카드와 겹치지 않음 */
+}
+
+.dash-link {
+  display: inline-block;
+  padding: 12px 22px;
+  background-color: white;
+  color: #327a55;
+  border: 2px solid #dce5ec;
+  border-radius: 16px;
+  font-size: 18px;          /* 카드 제목(32px)과 조화로운 크기 */
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dash-link:hover {
+  background-color: #eef5f0;
+  border-color: #327a55;
+}

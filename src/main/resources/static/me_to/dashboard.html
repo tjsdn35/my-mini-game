@@ -5,10 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>나의 라이프 대시보드</title>
   <link rel="stylesheet" href="css/dashboard.css">
+  <style>
+    /* index.html(오늘의 할 일) 전용 기능을 대시보드 1번 패널에 자연스럽게 녹이는 스타일 */
+    .todo-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #555;
+      margin: 10px 0;
+    }
+    .bulk-buttons {
+      display: flex;
+      gap: 6px;
+    }
+    .sub-btn {
+      padding: 4px 8px;
+      font-size: 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #64748b;
+      color: white;
+      cursor: pointer;
+    }
+    .sub-btn.danger {
+      background-color: #ef4444;
+    }
+    .filter-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .filter-btn {
+      padding: 7px;
+      border: none;
+      border-radius: 8px;
+      background-color: #f1f5f9;
+      font-size: 13px;
+      font-weight: bold;
+      color: #334155;
+      cursor: pointer;
+    }
+    .filter-btn.active {
+      background-color: #327a55;
+      color: white;
+    }
+    /* 파스텔톤 할 일 항목 및 더블클릭 수정창 스타일 */
+    .task-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+    .task-item span {
+      cursor: pointer;
+      flex: 1;
+      text-align: left;
+    }
+    .edit-input {
+      flex: 1;
+      padding: 4px 8px;
+      font-size: 14px;
+      border: 1px solid #327a55;
+      border-radius: 6px;
+      margin-right: 8px;
+    }
+  </style>
 </head>
 <body>
   <div class="dashboard-shell">
-    <!-- 1. 상단 제목과 날짜 -->
+    <!-- 상단 제목과 날짜 -->
     <header class="dash-header">
       <div>
         <h1>🌿 나의 라이프 대시보드</h1>
@@ -18,7 +87,34 @@
     </header>
 
     <main class="dash-grid">
-      <!-- 2. 오늘의 집중 영역 & 할 일 완료율 -->
+      <!-- 1번 패널: 오늘의 할 일 (index.html 상세 기능 통합) -->
+      <section class="panel todo-panel">
+        <h2>🍓 오늘의 할 일</h2>
+        <form id="todoForm" class="todo-form">
+          <input id="taskInput" type="text" placeholder="할 일을 입력하세요">
+          <button type="submit">추가</button>
+        </form>
+
+        <!-- 남은 할 일 카운터 및 일괄 삭제 -->
+        <div class="todo-status-bar">
+          <span id="taskCount">남은 할 일: 0개 (전체 0개)</span>
+          <div class="bulk-buttons">
+            <button type="button" id="clearCompletedBtn" class="sub-btn">완료 삭제</button>
+            <button type="button" id="clearAllBtn" class="sub-btn danger">전체 삭제</button>
+          </div>
+        </div>
+
+        <!-- 필터 탭 (전체 / 진행중 / 완료) -->
+        <div class="filter-tabs">
+          <button type="button" class="filter-btn active" data-filter="all">전체</button>
+          <button type="button" class="filter-btn" data-filter="active">진행중</button>
+          <button type="button" class="filter-btn" data-filter="completed">완료</button>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+
+      <!-- 2번 패널: 오늘의 집중 영역 & 할 일 완료율 -->
       <section class="panel focus-panel">
         <h2>🎯 오늘의 집중 목표</h2>
         <input id="focusInput" type="text" placeholder="오늘 가장 집중할 한 가지를 적어보세요">
@@ -34,17 +130,7 @@
         </div>
       </section>
 
-      <!-- 3 & 4. 할 일 입력 폼 및 할 일 목록 -->
-      <section class="panel todo-panel">
-        <h2>✅ 오늘의 할 일</h2>
-        <form id="todoForm" class="todo-form">
-          <input id="taskInput" type="text" placeholder="새로운 할 일을 입력하세요">
-          <button type="submit">추가</button>
-        </form>
-        <ul id="taskList" class="task-list"></ul>
-      </section>
-
-      <!-- 5. 메모 자동 저장 영역 -->
+      <!-- 3번 패널: 메모 자동 저장 영역 -->
       <section class="panel memo-panel">
         <div class="memo-header">
           <h2>📝 빠른 메모</h2>
@@ -54,7 +140,7 @@
       </section>
     </main>
 
-    <!-- 6. 안내 문구와 푸터 -->
+    <!-- 안내 문구와 푸터 -->
     <footer class="dash-footer">
       <p>모든 데이터는 현재 브라우저(localStorage)에 안전하게 저장됩니다. 비밀번호 등 민감한 정보는 입력하지 마세요.</p>
     </footer>
