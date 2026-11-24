@@ -126,24 +126,72 @@ body {
 }
 
 .summary-grid {
-	
+	display: grid; /* 표모양으로 배치 */
+	/* 그리드 기본 칸나누기 */
+	grid-template-columns: 1fr 1fr 2fr;
+	/* 컴럼 사이의 간격 */
+	gap: 16px;
+	margin: 18px 0;
+}
+/* .summary-card와 .panel공통 적용 */
+.summary-card, .panel {
+	border: 1px solid var(--line);
+	border-radius: 18px;
+	background: var(--surface);
+	box-shadow: 0 7px 24px rgba(33, 67, 49, .04);
 }
 
 .summary-card {
-	
+	min-height: 112px;
+	padding: 20px 22px;
 }
 
-.summary-label{
-	
+.summary-label {
+	display: block; /* 이 이후 인라인을 블럭으로 다음줄에 출력
+						 인라인 요소 + <br> */
+	margin-bottom: 9px;
+	color: var(--muted);
+	font-size: 13px;
 }
 
-.totalCount {
-	
+/* .summary-card 안의 strong 태그를 콕찍어 가르킴 */
+.summary-card>strong {
+	font-size: 30px;
 }
 
 .summary-unit {
-	
+	margin-left: 5px;
+	color: var(--muted);
+	font-size: 13px;
 }
+/* 완료 그래프 창 영역 */
+.progress-heading{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.progress-heading strong{
+	color: var(--green);
+	font-size: 22px;
+}
+
+.progress-track{
+	height: 10px;
+	overflow: hidden;
+	border-radius: 99px;
+	background: #edf2ef;
+}
+
+.progress-fill{
+	width: 0;
+	height: 100%;
+	border-radius: inherit;
+	background: var(--green);
+	transition: width .25s ease;
+}
+
+
 
 /* 꼬리영역 꾸미기 */
 footer {
