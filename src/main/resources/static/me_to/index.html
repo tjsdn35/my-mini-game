@@ -3,43 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>나의 할 일 목록</title>
+  <title>나의 라이프 & 미니게임 허브</title>
   <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-  <!-- 흰색 카드 바깥에 라이프 대시보드 이동 위치 -->
-  <div class="top-nav">
+  <!-- 상단 네비게이션 바 -->
+  <header class="main-header">
+    <div class="header-title">
+      <h1>🏡 나만의 라이프 & 게임 허브</h1>
+      <p>오늘의 할 일을 관리하고 5가지 미니게임으로 휴식을 즐겨보세요!</p>
+    </div>
     <a href="dashboard.html" class="dash-link">🌿 라이프 대시보드 →</a>
-  </div>
+  </header>
 
-  <div class="container">
-    <h1>🍓 오늘의 할 일</h1>
-    <p>오늘도 하나씩 실천해 봐요!</p>
-    
-    <div class="input-area">
-      <input type="text" id="taskInput" placeholder="할 일을 입력하세요">
-      <button id="addButton">추가하기</button>
-    </div>
-
-    <!-- 남은 할 일 카운터 및 일괄 삭제 버튼 -->
-    <div class="status-bar">
-      <span id="taskCount">남은 할 일: 0개</span>
-      <div class="bulk-buttons">
-        <button id="clearCompletedBtn" class="sub-btn">완료 삭제</button>
-        <button id="clearAllBtn" class="sub-btn danger">전체 삭제</button>
+  <!-- 메인 2단 그리드 영역 (왼쪽: 오늘의 할 일 / 오른쪽: 미니게임 5종) -->
+  <main class="hub-grid">
+    <!-- 1. 왼쪽: 기존 오늘의 할 일 카드 -->
+    <section class="container hub-card">
+      <h2>🍓 오늘의 할 일</h2>
+      <p>오늘도 하나씩 실천해 봐요!</p>
+      
+      <div class="input-area">
+        <input type="text" id="taskInput" placeholder="할 일을 입력하세요">
+        <button id="addButton">추가하기</button>
       </div>
-    </div>
 
-    <!-- 필터 탭 버튼 영역 -->
-    <div class="filter-tabs">
-      <button class="filter-btn active" data-filter="all">전체</button>
-      <button class="filter-btn" data-filter="active">진행중</button>
-      <button class="filter-btn" data-filter="completed">완료</button>
-    </div>
+      <div class="status-bar">
+        <span id="taskCount">남은 할 일: 0개</span>
+        <div class="bulk-buttons">
+          <button id="clearCompletedBtn" class="sub-btn">완료 삭제</button>
+          <button id="clearAllBtn" class="sub-btn danger">전체 삭제</button>
+        </div>
+      </div>
 
-    <ul id="taskList"></ul>
-  </div>
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="active">진행중</button>
+        <button class="filter-btn" data-filter="completed">완료</button>
+      </div>
+
+      <ul id="taskList"></ul>
+    </section>
+
+    <!-- 2. 오른쪽: 미니게임 아케이드 카드 -->
+    <section class="container hub-card">
+      <h2>🎮 미니게임 아케이드</h2>
+      <p>원하는 게임을 선택해 최고 점수에 도전하세요!</p>
+
+      <div class="game-grid">
+        <a href="games/clicker.html" class="game-item">
+          <span class="game-emoji">👆</span>
+          <div>
+            <strong>클릭 점수 게임</strong>
+            <small>빠르게 클릭해서 목표 달성하기</small>
+          </div>
+        </a>
+
+        <a href="games/guess.html" class="game-item">
+          <span class="game-emoji">🔢</span>
+          <div>
+            <strong>숫자 맞히기</strong>
+            <small>업·다운 힌트로 비밀 숫자 찾기</small>
+          </div>
+        </a>
+
+        <a href="games/quiz.html" class="game-item">
+          <span class="game-emoji">❓</span>
+          <div>
+            <strong>상식 퀴즈 게임</strong>
+            <small>객관식 문제를 풀고 만점 도전</small>
+          </div>
+        </a>
+
+        <a href="games/treasure.html" class="game-item">
+          <span class="game-emoji">💎</span>
+          <div>
+            <strong>보물찾기 게임</strong>
+            <small>폭탄을 피해 5번 안에 보물 찾기</small>
+          </div>
+        </a>
+
+        <a href="games/rps.html" class="game-item">
+          <span class="game-emoji">✌️</span>
+          <div>
+            <strong>가위바위보 (5판 3선승)</strong>
+            <small>연승 보너스와 3승 챔피언 도전</small>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
   <script src="js/app.js"></script>
 </body>
 </html>
