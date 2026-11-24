@@ -78,15 +78,19 @@
 <body>
   <div class="dashboard-shell">
     <!-- 상단 제목과 날짜 -->
-    <header class="dash-header">
-      <div>
-        <h1>🌿 나의 라이프 대시보드</h1>
-        <p id="todayDate" class="date-text">날짜를 불러오는 중...</p>
-      </div>
-      <a href="index.html" class="home-link">← 메인으로</a>
-    </header>
+		<header class="dash-header">
+			<div>
+				<h1>🌿 나의 라이프 대시보드</h1>
+				<p id="todayDate" class="date-text">날짜를 불러오는 중...</p>
+			</div>
+			<div style="display: flex; gap: 10px;">
+				<a href="arcade.html" class="home-link">🎮 미니게임 로비</a> 
+				<a href="index.html" class="home-link">← 메인으로</a>
+			</div>
 
-    <main class="dash-grid">
+		</header>
+
+		<main class="dash-grid">
       <!-- 1번 패널: 오늘의 할 일 (index.html 상세 기능 통합) -->
       <section class="panel todo-panel">
         <h2>🍓 오늘의 할 일</h2>

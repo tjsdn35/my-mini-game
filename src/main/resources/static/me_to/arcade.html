@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 미니게임 아케이드 로비</title>
+  <link rel="stylesheet" href="css/mini.css">
+  <style>
+    .lobby-shell {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* 상단 헤더 및 이동 버튼 */
+    .lobby-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      text-align: left;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid #dce5ec;
+    }
+    .lobby-header h1 {
+      margin: 0 0 6px 0;
+      font-size: 30px;
+    }
+    .lobby-header p {
+      margin: 0;
+      color: #556b7d;
+    }
+    .nav-group {
+      display: flex;
+      gap: 10px;
+    }
+    .nav-btn {
+      display: inline-block;
+      padding: 12px 18px;
+      background-color: white;
+      color: #327a55;
+      border: 2px solid #dce5ec;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .nav-btn:hover {
+      background-color: #eef5f0;
+      border-color: #327a55;
+    }
+
+    /* 5종 게임 그리드 카드 */
+    .arcade-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .arcade-card {
+      background-color: white;
+      border: 1px solid #dce5ec;
+      border-radius: 20px;
+      padding: 26px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .arcade-card:hover {
+      transform: translateY(-4px);
+      border-color: #327a55;
+    }
+    .card-emoji {
+      font-size: 52px;
+      margin-bottom: 10px;
+    }
+    .arcade-card h2 {
+      margin: 6px 0 8px 0;
+      font-size: 21px;
+    }
+    .arcade-card p {
+      font-size: 14px;
+      color: #556b7d;
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+    .record-badge {
+      display: inline-block;
+      background-color: #fff9e6;
+      border: 1px solid #f1c40f;
+      color: #8a6d0b;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .play-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #327a55;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+    }
+    .play-btn:hover {
+      background-color: #245f40;
+    }
+  </style>
+</head>
+<body>
+  <div class="lobby-shell">
+    <!-- 상단 로비 헤더 -->
+    <header class="lobby-header">
+      <div>
+        <h1>🎮 미니게임 아케이드 로비</h1>
+        <p>원하는 미니게임을 선택해 최고 점수 신기록에 도전하세요!</p>
+      </div>
+      <div class="nav-group">
+        <a href="index.html" class="nav-btn">🏡 메인 허브</a>
+        <a href="dashboard.html" class="nav-btn">🌿 라이프 대시보드</a>
+      </div>
+    </header>
+
+    <!-- 5종 게임 카드 그리드 -->
+    <main class="arcade-grid">
+      <article class="arcade-card">
+        <div>
+          <div class="card-emoji">👆</div>
+          <h2>클릭 점수 게임</h2>
+          <p>제한 시간 또는 목표 점수까지 빠르게 버튼을 클릭하세요.</p>
+        </div>
+        <a href="games/clicker.html" class="play-btn">게임 시작</a>
+      </article>
+
+      <article class="arcade-card">
+        <div>
+          <div class="card-emoji">🔢</div>
+          <h2>숫자 맞히기</h2>
+          <p>업(UP)과 다운(DOWN) 힌트를 보고 비밀 숫자를 추리하세요.</p>
+        </div>
+        <a href="games/guess.html" class="play-btn">게임 시작</a>
+      </article>
+
+      <article class="arcade-card">
+        <div>
+          <div class="card-emoji">❓</div>
+          <h2>상식 퀴즈 게임</h2>
+          <p>다양한 객관식 문제를 풀고 만점에 도전해 보세요.</p>
+        </div>
+        <a href="games/quiz.html" class="play-btn">게임 시작</a>
+      </article>
+
+      <article class="arcade-card">
+        <div>
+          <div class="card-emoji">💎</div>
+          <h2>보물찾기 게임</h2>
+          <p>폭탄을 피해 5번의 기회 안에 숨겨진 보물을 찾으세요.</p>
+          <span class="record-badge">🏆 최고 점수: <span id="treasureRecord">0</span>점</span>
+        </div>
+        <a href="games/treasure.html" class="play-btn">게임 시작</a>
+      </article>
+
+      <article class="arcade-card">
+        <div>
+          <div class="card-emoji">✌️</div>
+          <h2>가위바위보 (5판 3선승)</h2>
+          <p>컴퓨터와 대결해 3승 챔피언과 연승 보너스를 노리세요.</p>
+          <span class="record-badge">🏆 최고 점수: <span id="rpsRecord">0</span>점</span>
+        </div>
+        <a href="games/rps.html" class="play-btn">게임 시작</a>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    // localStorage에 저장된 최고 점수 불러오기
+    document.querySelector("#treasureRecord").textContent = localStorage.getItem("treasureHighScore") || 0;
+    document.querySelector("#rpsRecord").textContent = localStorage.getItem("rpsHighScore") || 0;
+  </script>
+</body>
+</html>

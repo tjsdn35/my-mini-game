@@ -8,15 +8,19 @@
 </head>
 <body>
   <!-- 상단 네비게이션 바 -->
-  <header class="main-header">
-    <div class="header-title">
-      <h1>🏡 나만의 라이프 & 게임 허브</h1>
-      <p>오늘의 할 일을 관리하고 5가지 미니게임으로 휴식을 즐겨보세요!</p>
-    </div>
-    <a href="dashboard.html" class="dash-link">🌿 라이프 대시보드 →</a>
-  </header>
+	<header class="main-header">
+		<div class="header-title">
+			<h1>🏡 나만의 라이프 & 게임 허브</h1>
+			<p>오늘의 할 일을 관리하고 5가지 미니게임으로 휴식을 즐겨보세요!</p>
+		</div>
+		<div style="display: flex; gap: 10px;">
+			<a href="arcade.html" class="dash-link">🎮 미니게임 로비</a> 
+			<a href="dashboard.html" class="dash-link">🌿 라이프 대시보드 →</a>
+		</div>
 
-  <!-- 메인 2단 그리드 영역 (왼쪽: 오늘의 할 일 / 오른쪽: 미니게임 5종) -->
+	</header>
+
+	<!-- 메인 2단 그리드 영역 (왼쪽: 오늘의 할 일 / 오른쪽: 미니게임 5종) -->
   <main class="hub-grid">
     <!-- 1. 왼쪽: 기존 오늘의 할 일 카드 -->
     <section class="container hub-card">
